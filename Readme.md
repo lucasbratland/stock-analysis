@@ -61,7 +61,45 @@ This proved effective for the data set we were given.
 ![2018](/resources/VBA_Challenge_2018_Before_Refactoring.png)
 
 This is a small sample set and we can do better. We refectored the code to use more arrays and only one For loop. 
+    'Initialize array of all tickers
+    Dim tickers(12) As String
+    
+    tickers(0) = "AY"
+    tickers(1) = "CSIQ"
+    tickers(2) = "DQ"
+    tickers(3) = "ENPH"
+    tickers(4) = "FSLR"
+    tickers(5) = "HASI"
+    tickers(6) = "JKS"
+    tickers(7) = "RUN"
+    tickers(8) = "SEDG"
+    tickers(9) = "SPWR"
+    tickers(10) = "TERP"
+    tickers(11) = "VSLR"
+    
+    'Activate data worksheet
+    Worksheets(yearValue).Activate
+    
+    'Get the number of rows to loop over
+    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
+    
+    '1a) Create a ticker Index
+    
+    tickerIndex = 0
 
+    '1b) Create three output arrays
+    
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
+    
+    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+    
+    For i = 0 To 11
+        
+        tickerVolumes(i) = 0
+       
+    Next i
     ''2b) Loop over all the rows in the spreadsheet.
     For i = 2 To RowCount
         
@@ -98,10 +136,12 @@ This is a small sample set and we can do better. We refectored the code to use m
         
     Next i
 
+Doing this cause a much better result
 
+![2017](/resources/VBA_Challenge_2017.png) 
+![2018](/resources/VBA_Challenge_2018.png)
 
-
-
+This lower the time taken by 
 
 
 
