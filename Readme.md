@@ -11,32 +11,32 @@ There was a request by Steven to prepare a workbook for him analyzing the stock 
 ### Analysis
 Originally when we created teh VBA code for this project, we used 2 nested For loops. 
 
-``Loop through the tickers.
+    'Loop through the tickers.
 
     For i = 0 To 11
         
         ticker = tickers(i)
         totalVolume = 0
         
-'Loop through rows in the data.
+   'Loop through rows in the data.
 
         Worksheets(yearValue).Activate
         For j = 2 To rowEnd
         
-'Find the total volume for the current ticker.
+    'Find the total volume for the current ticker.
 
             If Cells(j, 1).Value = ticker Then
                 totalVolume = totalVolume + Cells(j, 8).Value
             End If
             
-'Find the starting price for the current ticker.
+    'Find the starting price for the current ticker.
 
             If Cells(j, 1).Value = ticker And Cells(j - 1, 1).Value <> ticker Then
                 '  set starting price
                 startingPrice = Cells(j, 6).Value
             End If
             
-'Find the ending price for the current ticker.
+    'Find the ending price for the current ticker.
 
             If Cells(j, 1).Value = ticker And Cells(j + 1, 1) <> ticker Then
                 'set ending price
@@ -44,15 +44,15 @@ Originally when we created teh VBA code for this project, we used 2 nested For l
             End If
         
         Next j
-        
-'Output the data for the current ticker.
+
+    'Output the data for the current ticker.
         
         Worksheets("All Stocks Analysis").Activate
         Cells(4 + i, 1).Value = ticker
         Cells(4 + i, 2).Value = totalVolume
         Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
     
- Next i
+    Next i
     
 
 This proved effective for the data set we were given
