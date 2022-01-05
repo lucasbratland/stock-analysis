@@ -52,7 +52,7 @@ Originally when we created teh VBA code for this project, we used 2 nested For l
         Cells(4 + i, 2).Value = totalVolume
         Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
     
- Next i`
+ Next i
     
 
 This proved effective for the data set we were given
