@@ -9,7 +9,7 @@ There was a request by Steven to prepare a workbook for him analyzing the stock 
 ## Results
 
 ### Analysis
-Originally when we created teh VBA code for this project, we used 2 nested For loops. 
+Originally when we created the VBA code for this project, we used 2 nested For loops. 
 
     'Loop through the tickers.
 
@@ -18,7 +18,7 @@ Originally when we created teh VBA code for this project, we used 2 nested For l
         ticker = tickers(i)
         totalVolume = 0
         
-   'Loop through rows in the data.
+    'Loop through rows in the data.
 
         Worksheets(yearValue).Activate
         For j = 2 To rowEnd
