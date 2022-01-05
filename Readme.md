@@ -55,10 +55,54 @@ Originally when we created the VBA code for this project, we used 2 nested For l
     Next i
     
 
-This proved effective for the data set we were given
+This proved effective for the data set we were given.  
 
 ![2017](/resources/VBA_Challenge_2017_Before_Refactoring.png) 
 ![2018](/resources/VBA_Challenge_2018_Before_Refactoring.png)
+
+This is a small sample set and we can do better. We refectored the code to use more arrays and only one For loop. 
+
+    ''2b) Loop over all the rows in the spreadsheet.
+    For i = 2 To RowCount
+        
+        '3a) Increase volume for current ticker
+        
+        If Cells(i, 1).Value = tickers(tickerIndex) Then
+            tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+        End If
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+        
+        If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
+            '  set starting price
+            tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
+        End If
+            
+            
+        'End If
+        
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+        'If  Then
+            
+        If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+            'set Ending Price
+            tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
+         End If
+
+            '3d Increase the tickerIndex.
+        If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+                tickerIndex = tickerIndex + 1
+        'End If
+        End If
+        
+    Next i
+
+
+
+
+
+
 
 
 When isolating the theater crowdfunding category, projects that launched in May are the most successful with 66.9% reaching their goal. This is followed by June and July with 65.4% and 63.0% respectively. ![Chart](/Theater_Outcomes_vs_Launch_percent.png)
