@@ -11,7 +11,7 @@ There was a request by Steven to prepare a workbook for him analyzing the stock 
 ### Analysis
 Originally when we created teh VBA code for this project, we used 2 nested For loops. 
 
-Loop through the tickers.
+``Loop through the tickers.
 
     For i = 0 To 11
         
@@ -52,7 +52,7 @@ Loop through the tickers.
         Cells(4 + i, 2).Value = totalVolume
         Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
     
- Next i
+ Next i`
     
 
 This proved effective for the data set we were given
