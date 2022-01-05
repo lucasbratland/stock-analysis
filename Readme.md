@@ -11,7 +11,6 @@ There was a request by Steven to prepare a workbook for him analyzing the stock 
 ### Analysis
 Originally when we created teh VBA code for this project, we used 2 nested For loops. 
 
-'''
 Loop through the tickers.
 
     For i = 0 To 11
@@ -54,12 +53,12 @@ Loop through the tickers.
         Cells(4 + i, 3).Value = endingPrice / startingPrice - 1
     
  Next i
-'''
+    
 
 This proved effective for the data set we were given
 
 ![2017](/resources/VBA_Challenge_2017_Before_Refactoring.png) 
-![2018](/resources/VBA_Challenge_2018_Before_refactoring.png)
+![2018](/resources/VBA_Challenge_2018_Before_Refactoring.png)
 
 
 When isolating the theater crowdfunding category, projects that launched in May are the most successful with 66.9% reaching their goal. This is followed by June and July with 65.4% and 63.0% respectively. ![Chart](/Theater_Outcomes_vs_Launch_percent.png)
