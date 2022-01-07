@@ -11,7 +11,7 @@ There was a request by Steven to prepare a workbook for him analyzing the stock 
 ### Analysis
 Originally when we created the VBA code for this project, we used 2 nested For loops. 
 
-    'Loop through the tickers.
+     'Loop through the tickers.
 
     For i = 0 To 11
         
